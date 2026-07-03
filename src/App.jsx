@@ -7,7 +7,7 @@ import { FAQ } from './components/sections/FAQ';
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-bg font-sans text-brand-text">
+    <div className="min-h-screen font-sans">
       <Navbar />
       
       <main>

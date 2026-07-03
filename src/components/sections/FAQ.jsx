@@ -1,57 +1,91 @@
 import { useState } from 'react';
-import { Container } from '../common/Container';
-import { SectionTitle, Highlight } from '../common/SectionTitle';
 import { faqs } from '../../data/content';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus, ChevronDown } from 'lucide-react';
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(2);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-24 bg-brand-bg" id="faq">
-      <Container>
-        <SectionTitle 
-          title={
-            <>
-              Frequently Asked <Highlight>Questions</Highlight>
-            </>
-          }
-          subtitle="You write what you feel, set the date and let the postcard wait patiently."
-          className="mb-16"
-        />
-        
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, idx) => (
-            <div 
-              key={idx} 
-              className={`bg-white rounded-2xl border transition-colors duration-300 ${openIndex === idx ? 'border-brand-dark shadow-sm' : 'border-gray-100 hover:border-gray-300'}`}
-            >
+    <section className="relative bg-[#fdfdfd] py-[100px] px-[138px]" id="faq">
+      {/* Section Header */}
+      <div className="relative w-[672px] mx-auto flex flex-col gap-4 items-center text-center mb-20 tracking-[-0.5px]">
+        <h2 className="font-serif text-[56px] leading-[64px] text-[#18181b]">
+          Frequently Asked Questions
+        </h2>
+        <p className="font-sans text-[20px] leading-7 text-[#71717a]">
+          You write what your feel, set it aside and let the postcard wait patiently.
+        </p>
+
+        {/* Decorative underline */}
+        <div className="absolute right-[-355px] top-[95px] w-[203px] h-[74px]">
+          <svg viewBox="0 0 203 74" className="w-full h-full">
+            <path 
+              d="M 10 37 Q 101.5 10, 193 37" 
+              stroke="#18181b" 
+              strokeWidth="2" 
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* FAQ Grid */}
+      <div className="flex flex-wrap gap-3 max-w-full">
+        {faqs.map((faq, idx) => (
+          <div 
+            key={idx}
+            className={`${
+              openIndex === idx ? 'w-[576px]' : 'w-[576px]'
+            } transition-all duration-300`}
+          >
+            {openIndex === idx ? (
+              // Expanded FAQ Item
+              <div className="flex flex-col gap-1 rounded-2xl">
+                <button
+                  onClick={() => toggleFAQ(idx)}
+                  className="bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6 flex items-center justify-between hover:border-gray-200 transition-colors"
+                >
+                  <span className="font-medium text-[20px] leading-7 text-[#101213]">
+                    {faq.question}
+                  </span>
+                  <ChevronDown className="w-4 h-4 text-gray-600" />
+                </button>
+                
+                <div className="bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6">
+                  <div className="w-[510px]">
+                    <p className="font-medium text-base leading-[1.4] text-[#101213] tracking-[-0.016px] mb-3">
+                      What you'll do:
+                    </p>
+                    <ul className="text-[#71717a] text-base leading-6 space-y-0 list-disc ml-6">
+                      <li>Design wireframes, user flows, and high-fidelity mockups.</li>
+                      <li>Conduct user research and translate findings into design improvements.</li>
+                      <li>Work closely with developers to bring designs to life.</li>
+                      <li>Ensure consistency across brand visuals and digital products.</li>
+                      <li>Iterate designs based on testing and feedback.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Collapsed FAQ Item
               <button
                 onClick={() => toggleFAQ(idx)}
-                className="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark rounded-2xl"
-                aria-expanded={openIndex === idx}
+                className="w-full bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6 flex items-center justify-between hover:border-gray-200 transition-colors"
               >
-                <span className="font-serif text-xl pr-8 text-brand-dark font-medium">{faq.question}</span>
-                <span className="shrink-0 text-brand-textLight">
-                  {openIndex === idx ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                <span className="font-medium text-[20px] leading-7 text-[#101213]">
+                  {faq.question}
                 </span>
+                <Plus className="w-4 h-4 text-gray-600 flex-shrink-0" />
               </button>
-              
-              <div 
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="px-8 pb-8 text-brand-textLight leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
