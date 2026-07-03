@@ -1,7 +1,7 @@
 import { Container } from '../common/Container';
 import { Button } from '../common/Button';
 import { navigation } from '../../data/content';
-import { Twitter, Instagram, Mail, Globe } from 'lucide-react';
+import { Mail, Globe } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -41,10 +41,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Twitter className="w-4 h-4" />
+                <Globe className="w-4 h-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Instagram className="w-4 h-4" />
+                <Mail className="w-4 h-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                 <Globe className="w-4 h-4" />

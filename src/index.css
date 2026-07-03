@@ -5,14 +5,14 @@
   --font-sans: "Inter", sans-serif;
   --font-serif: "Playfair Display", serif;
   
-  --color-brand-bg: #fbfaf8;
+  --color-brand-bg: #faf9f6;
   --color-brand-dark: #1c1c1c;
   --color-brand-text: #222222;
-  --color-brand-textLight: #555555;
-  --color-brand-yellow: #fdf1c2;
-  --color-brand-green: #d1f4d9;
-  --color-brand-red: #fcd3d3;
-  --color-brand-orange: #fde3c2;
+  --color-brand-textLight: #666666;
+  --color-brand-yellow: #fef08a;
+  --color-brand-green: #bbf7d0;
+  --color-brand-red: #fecaca;
+  --color-brand-orange: #fed7aa;
   
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
