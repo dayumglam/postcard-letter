@@ -1,4 +1,4 @@
-import { Mail, Hourglass, Lock, Mailbox } from 'lucide-react';
+import { Mail, Timer, Lock, Heart } from 'lucide-react';
 
 export const navigation = [
   { name: 'About', href: '#about' },
@@ -11,50 +11,47 @@ export const features = [
   {
     name: 'Intentional',
     description: 'Every postcard is written with care, created for a specific feeling and a thoughtful moment.',
-    icon: Mailbox,
-    color: '#fef3c7', // yellow
+    icon: Heart,
+    color: '#fef3c7',
   },
   {
     name: 'Timed',
     description: 'You decide when the message should be opened. It arrives only when the time feels right.',
-    icon: Hourglass,
-    color: '#d2fec7', // green
+    icon: Timer,
+    color: '#d2fec7',
   },
   {
     name: 'Meaningful',
     description: 'Words become more meaningful when they reach someone at the exact day they need to read.',
     icon: Mail,
-    color: '#ffe4e6', // pink/red
+    color: '#ffe4e6',
   },
   {
     name: 'Private',
     description: 'Each postcard is sealed securely, meant only for the person it was written for.',
     icon: Lock,
-    color: '#ffe9d3', // orange
+    color: '#ffe9d3',
   },
 ];
 
 export const steps = [
   {
     number: '1',
-    title: 'Choose The moment',
     prefix: 'Choose The ',
     bold: 'moment',
-    image: 'https://images.unsplash.com/photo-1506744626753-aba71415b9e0?w=800&q=80',
+    image: '/src/assets/step1.png',
   },
   {
     number: '2',
-    title: 'Write your message',
     prefix: 'Write your ',
     bold: 'message',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80',
+    image: '/src/assets/step2.png',
   },
   {
     number: '3',
-    title: 'Let it arrive naturally',
     prefix: 'Let it arrive ',
     bold: 'naturally',
-    image: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80',
+    image: '/src/assets/step3.png',
   },
 ];
 

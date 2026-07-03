@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { faqs } from '../../data/content';
-import { Plus, ChevronDown } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(2);
@@ -10,63 +10,55 @@ export function FAQ() {
   };
 
   return (
-    <section className="relative bg-[#fdfdfd] py-24 px-8 md:px-16" id="faq">
+    <section className="bg-[#fafafa] py-20 px-8" id="faq">
       {/* Section Header */}
-      <div className="relative w-full max-w-[672px] mx-auto flex flex-col gap-4 items-center text-center mb-20">
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight text-[#18181b]">
+      <div className="max-w-2xl mx-auto text-center mb-16">
+        <h2 className="font-serif text-4xl leading-tight text-[#1a1a1a] mb-3">
           Frequently Asked Questions
         </h2>
-        <p className="font-sans text-lg md:text-xl leading-relaxed text-[#71717a]">
-          You write what your feel, set it aside and let the postcard wait patiently.
+        <p className="text-gray-600 text-sm leading-relaxed">
+          You write what you feel, set it aside and let the postcard wait patiently.
         </p>
       </div>
 
-      {/* FAQ Grid */}
-      <div className="flex flex-wrap gap-3 max-w-6xl mx-auto">
+      {/* FAQ List */}
+      <div className="max-w-2xl mx-auto space-y-3">
         {faqs.map((faq, idx) => (
           <div 
             key={idx}
-            className="w-full md:w-[calc(50%-6px)] transition-all duration-300"
+            className="bg-white rounded-xl border border-gray-200 overflow-hidden"
           >
-            {openIndex === idx ? (
-              // Expanded FAQ Item
-              <div className="flex flex-col gap-1 rounded-2xl">
-                <button
-                  onClick={() => toggleFAQ(idx)}
-                  className="bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6 flex items-center justify-between hover:border-gray-200 transition-colors text-left w-full"
-                >
-                  <span className="font-medium text-lg md:text-xl leading-relaxed text-[#101213]">
-                    {faq.question}
-                  </span>
-                  <ChevronDown className="w-4 h-4 text-gray-600 flex-shrink-0 ml-4" />
-                </button>
-                
-                <div className="bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6">
-                  <div className="w-full">
-                    <p className="font-medium text-base leading-relaxed text-[#101213] mb-3">
-                      What you'll do:
-                    </p>
-                    <ul className="text-[#71717a] text-base leading-relaxed space-y-1 list-disc ml-6">
-                      <li>Design wireframes, user flows, and high-fidelity mockups.</li>
-                      <li>Conduct user research and translate findings into design improvements.</li>
-                      <li>Work closely with developers to bring designs to life.</li>
-                      <li>Ensure consistency across brand visuals and digital products.</li>
-                      <li>Iterate designs based on testing and feedback.</li>
-                    </ul>
-                  </div>
+            {/* Question */}
+            <button
+              onClick={() => toggleFAQ(idx)}
+              className="w-full px-5 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors text-left"
+            >
+              <span className="font-medium text-base text-[#1a1a1a] pr-4">
+                {faq.question}
+              </span>
+              {openIndex === idx ? (
+                <Minus className="w-4 h-4 text-gray-500 flex-shrink-0" />
+              ) : (
+                <Plus className="w-4 h-4 text-gray-500 flex-shrink-0" />
+              )}
+            </button>
+            
+            {/* Answer */}
+            {openIndex === idx && (
+              <div className="px-5 pb-4 border-t border-gray-100">
+                <div className="pt-3">
+                  <p className="font-medium text-sm text-[#1a1a1a] mb-2">
+                    What you'll do:
+                  </p>
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-1 list-disc ml-5">
+                    <li>Design wireframes, user flows, and high-fidelity mockups.</li>
+                    <li>Conduct user research and translate findings into design improvements.</li>
+                    <li>Work closely with developers to bring designs to life.</li>
+                    <li>Ensure consistency across brand visuals and digital products.</li>
+                    <li>Iterate designs based on testing and feedback.</li>
+                  </ul>
                 </div>
               </div>
-            ) : (
-              // Collapsed FAQ Item
-              <button
-                onClick={() => toggleFAQ(idx)}
-                className="w-full bg-white border border-[#f4f4f5] rounded-2xl px-6 py-6 flex items-center justify-between hover:border-gray-200 transition-colors text-left"
-              >
-                <span className="font-medium text-lg md:text-xl leading-relaxed text-[#101213]">
-                  {faq.question}
-                </span>
-                <Plus className="w-4 h-4 text-gray-600 flex-shrink-0 ml-4" />
-              </button>
             )}
           </div>
         ))}
