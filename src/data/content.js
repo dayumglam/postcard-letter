@@ -1,5 +1,3 @@
-import { Mail, Timer, Lock, Heart } from 'lucide-react';
-
 export const navigation = [
   { name: 'About', href: '#about' },
   { name: 'Works', href: '#works' },
@@ -11,25 +9,25 @@ export const features = [
   {
     name: 'Intentional',
     description: 'Every postcard is written with care, created for a specific feeling and a thoughtful moment.',
-    icon: Heart,
+    icon: '/mailbox.png',
     color: '#fef3c7',
   },
   {
     name: 'Timed',
-    description: 'You decide when the message should be opened. It arrives only when the time feels right.',
-    icon: Timer,
+    description: 'You decide when the message should be opened, so it arrives only when the time feels right.',
+    icon: '/hourglass.png',
     color: '#d2fec7',
   },
   {
     name: 'Meaningful',
-    description: 'Words become more meaningful when they reach someone at the exact day they need to read.',
-    icon: Mail,
+    description: 'Words become more meaningful when they reach someone at the moment they need it most.',
+    icon: '/mailbox.png',
     color: '#ffe4e6',
   },
   {
     name: 'Private',
-    description: 'Each postcard is sealed securely, meant only for the person it was written for.',
-    icon: Lock,
+    description: 'Each postcard is shared privately, meant only for the person it was written for.',
+    icon: '/keyhole.png',
     color: '#ffe9d3',
   },
 ];
@@ -39,19 +37,19 @@ export const steps = [
     number: '1',
     prefix: 'Choose The ',
     bold: 'moment',
-    image: '/src/assets/step1.png',
+    image: '/step1.png',
   },
   {
     number: '2',
     prefix: 'Write your ',
     bold: 'message',
-    image: '/src/assets/step2.png',
+    image: '/step2.png',
   },
   {
     number: '3',
     prefix: 'Let it arrive ',
     bold: 'naturally',
-    image: '/src/assets/step3.png',
+    image: '/step3.png',
   },
 ];
 

@@ -1,5 +1,7 @@
+'use client';
+
 import { useState } from 'react';
-import { faqs } from '../../data/content';
+import { faqs } from '@/data/content';
 import { Plus, Minus } from 'lucide-react';
 
 export function FAQ() {

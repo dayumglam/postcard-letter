@@ -91,7 +91,7 @@ export function Footer() {
       {/* Background Image - Grass at bottom - positioned behind */}
       <div className="absolute left-0 right-0 bottom-0 w-full h-[250px] pointer-events-none">
         <img 
-          src="/src/assets/hero-bg.png" 
+          src="/hero-bg.png" 
           alt="" 
           className="w-full h-full object-cover object-top"
         />

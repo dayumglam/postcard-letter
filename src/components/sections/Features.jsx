@@ -1,4 +1,4 @@
-import { features } from '../../data/content';
+import { features } from '@/data/content';
 
 export function Features() {
   return (
@@ -6,7 +6,7 @@ export function Features() {
       {/* Background Image */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[11px] w-[1440px] h-[1050px] opacity-10 pointer-events-none">
         <img 
-          src="/src/assets/section-bg.png"
+          src="/section-bg.png"
           alt="" 
           className="w-full h-full object-bottom"
         />
@@ -14,24 +14,20 @@ export function Features() {
 
       {/* Section Header */}
       <div className="relative w-full max-w-[672px] mx-auto text-center mb-20 tracking-[-0.5px]">
-        <h2 className="font-serif text-[56px] leading-[64px] text-[#18181b] mb-4">
+        <h2 className="font-['Instrument_Serif'] text-[56px] leading-[64px] text-[#18181b] mb-4">
           A different way to send a message
         </h2>
-        <p className="font-sans text-[20px] leading-7 text-[#71717a]">
+        <p className="font-['Inter'] text-[20px] leading-7 text-[#71717a]">
           each postcard waits quietly until the moment you choose comes, it's small pause in a fast world. A message that arrives with intention
         </p>
 
-        {/* Decorative Vector */}
+        {/* Decorative Curve */}
         <div className="absolute right-[-194.49px] top-[123.45px] w-[174.511px] h-[67.043px]">
-          <svg viewBox="0 0 175 68" className="w-full h-full">
-            <path 
-              d="M 10 34 Q 87.5 10, 165 34" 
-              stroke="#18181b" 
-              strokeWidth="2" 
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
+          <img 
+            src="/feature-curve.png" 
+            alt="" 
+            className="w-full h-full"
+          />
         </div>
       </div>
 
@@ -44,16 +40,20 @@ export function Features() {
             style={{ backgroundColor: feature.color }}
           >
             {/* Icon Container */}
-            <div className="w-[124px] h-full flex items-center justify-center backdrop-blur-[5.599px] flex-shrink-0">
-              <feature.icon className="w-16 h-16 text-[#18181b]" strokeWidth={1.5} />
+            <div className="w-[124px] h-full flex items-center justify-center backdrop-blur-[5.599px] rounded-[8.463px] flex-shrink-0 p-5">
+              <img 
+                src={feature.icon} 
+                alt={feature.name}
+                className="w-16 h-16"
+              />
             </div>
 
             {/* Content */}
             <div className="flex-1 bg-white flex flex-col gap-2 justify-center p-6 min-w-0">
-              <h3 className="font-serif text-[36px] leading-[48px] text-[#18181b]">
+              <h3 className="font-['Instrument_Serif'] text-[36px] leading-[48px] text-[#18181b]">
                 {feature.name}
               </h3>
-              <p className="font-sans text-[20px] leading-7 text-[#71717a] tracking-[-0.5px]">
+              <p className="font-['Inter'] text-[20px] leading-7 text-[#71717a] tracking-[-0.5px]">
                 {feature.description}
               </p>
             </div>

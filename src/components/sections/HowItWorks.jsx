@@ -1,4 +1,4 @@
-import { steps } from '../../data/content';
+import { steps } from '@/data/content';
 
 export function HowItWorks() {
   return (

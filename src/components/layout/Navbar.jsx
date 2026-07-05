@@ -1,4 +1,4 @@
-import { navigation } from '../../data/content';
+import { navigation } from '@/data/content';
 
 export function Navbar() {
   return (

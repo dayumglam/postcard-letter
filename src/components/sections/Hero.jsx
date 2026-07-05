@@ -58,7 +58,7 @@ export function Hero() {
               }}
             >
               <img 
-                src="/src/assets/postcard.png"
+                src="/postcard.png"
                 alt="Postcard preview" 
                 className="w-full h-auto"
               />
@@ -70,7 +70,7 @@ export function Hero() {
       {/* Grass at bottom */}
       <div className="relative w-full h-32 mt-auto">
         <img 
-          src="/src/assets/hero-bg.png"
+          src="/hero-bg.png"
           alt="" 
           className="absolute bottom-0 w-full h-full object-cover object-top"
           style={{ maskImage: 'linear-gradient(to top, black 0%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 100%)' }}
